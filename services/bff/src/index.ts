@@ -4,13 +4,17 @@ import fs from 'fs/promises';
 import papa from 'papaparse';
 import { MessageCSV } from './types';
 import { sleep } from './util';
+import cors from 'cors';
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
-app.get('/messages/:id', async (req, res) => {
-	const messageId = parseInt(req.params.id as string);
+app.post('/messages', async (req, res) => {
+	const messageId = parseInt(req.body.id as string);
 	const filePath = path.join(__dirname, '..', 'data', 'messages.csv');
 	const file = await fs.readFile(filePath, 'utf-8');
 	const { data } = papa.parse<MessageCSV>(file, {
