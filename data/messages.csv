@@ -1,0 +1,17 @@
+ID,Content,Type,Delay,Owner,Widget,Reference
+0,"I recently saw your ad on television and immediately took to the Carpet featured in the scene where the kids are playing Twister!",text,0,user,None,
+1,"Hi there, thank you for getting in touch. Was this the Carpet you were referring to?",text,2000,system,Image,/public/carpet_court_kids.png
+2,"Yes that’s the one! What is the carpet in that image? I’m dying to know!",text,0,user,None
+3,"Sure, that’s one of our top selling ranges, Correa, which is part of our Natural collection from Carpet Court.<br/><br/>There are 10 different colours within this product however the featured colour in this advertisement is Eucalyptus.<br/><br/>Would you like to learn more about this range?",text,3000,system,None
+4,"Oh, so there’s a couple of color variations.Can you tell me more?",text,0,user,None
+5,"For Correa you can check our some of the colour variations in the right hand panel.<br/>This range is beautifully crafted from 100% wool fibre and this range is incredibly resilient.",text,3000,system,Image,/public/carpet_samples.jpg
+6,"I'd like to come in and see the product.",text,0,user,None
+7,"We can help you find and locate your local store.<br/><br/>OR<br/><br/>If you want to contact us directly, these are the best options to connect with us:<br/><br/>Book & view in-store via Calendar<br/><br/>Book a free measure & quote via our online form<br/>E-mail<br/>SMS<br/><br/>What’s best for you?",text,3000,system,None
+8,"I’d like to book a time in-store & see the Correa range in person",text,0,user,None
+9,"Great! Let’s book a time to have you come view at your local store.<br/><br/>Can I have your post code so I can locate the nearest store to schedule your visit and a consultation?",text,3000,system,None
+10,"My postcode is 3000",text,0,user,None
+11,"Thank you! Here’s your nearest store details:<br/><br/>South Melbourne Carpet Court<br/><br/>216 York St<br/><br/>South Melbourne<br/><br/>VIC 3205<br/><br/>I can advise Jason and the team to help guide you through these options.<br/><br/>Here’s the store calendar, pick the best time for you to come in and have someone guide you through these options. Have a look to see which of these times suit you.",text,3000,system,DatePicker
+12,"You have selected Tuesday 9:00 AM on 26th September",text,0,user,None
+13,"Awesome! To finalise your in-store booking, could we please get your:<ul><li>Full Name</li><li>E-mail Address</li><li>Phone Number</li></ul>",text,3000,system,None
+14,"Sure. My name is Katrina Williams, 0432165987, KatrinaW@Whirlwind.com.au",text,0,user,None
+15,"Fantastic, you’ve been booked for tomorrow 9am, we’ll send a confirmation to Katrinaw@whirlwind.com.au and your phone number.<br/><br/>Just find one of our friendly staff members when you arrive, and show them your booking confirmation.<br/><br/>Thank you for shopping with Carpet Court.<br/><br/>Jason & the team looks forward to seeing you in-store!",text,3000,system,None
