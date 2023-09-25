@@ -5,4 +5,5 @@ export interface MessageCSV {
 	Content: string;
 	Type: MessageType;
 	Delay: number;
+	Owner: 'user' | 'system';
 }

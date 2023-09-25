@@ -8,13 +8,24 @@ import cors from 'cors';
 
 const PORT = process.env.PORT || 3001;
 
+const messageHistory: any[] = [];
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
+app.get('/messages', async (req, res) => {
+	res.status(200).json(messageHistory);
+});
+
 app.post('/messages', async (req, res) => {
-	const messageId = parseInt(req.body.id as string);
+	const { content, id } = req.body;
+	const messageId = parseInt(id as string);
+
+	const userMessage = { id, content, type: 'text', owner: 'user' };
+	messageHistory.push(userMessage);
+
 	const filePath = path.join(__dirname, '..', 'data', 'messages.csv');
 	const file = await fs.readFile(filePath, 'utf-8');
 	const { data } = papa.parse<MessageCSV>(file, {
@@ -27,12 +38,14 @@ app.post('/messages', async (req, res) => {
 		return res.status(404).json({ error: 'Message not found' });
 	}
 
-	const { ID, Content, Type, Delay } = message;
+	const { ID, Content, Type, Delay, Owner } = message;
+	const reply = { id: ID, content: Content, type: Type, owner: Owner };
+	messageHistory.push(reply);
 
 	// Simulate a delay
 	await sleep(Delay);
 
-	res.status(200).json({ id: ID, content: Content, type: Type });
+	res.status(200).json(reply);
 });
 
 app.listen(PORT, () => {

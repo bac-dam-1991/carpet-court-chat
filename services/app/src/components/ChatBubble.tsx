@@ -1,11 +1,11 @@
 import { Paper, Stack, Typography } from '@mui/material';
 import { LoadingDot } from './LoadingDot';
 
-export type ChatOwner = 'user' | 'system';
+export type MessageOwner = 'user' | 'system';
 
 export interface ChatBubbleProps {
 	message?: string;
-	owner?: ChatOwner;
+	owner?: MessageOwner;
 	loading?: boolean;
 	loadingText?: string;
 }
