@@ -6,4 +6,6 @@ export interface MessageCSV {
 	Type: MessageType;
 	Delay: number;
 	Owner: 'user' | 'system';
+	Widget: string;
+	Reference: string;
 }

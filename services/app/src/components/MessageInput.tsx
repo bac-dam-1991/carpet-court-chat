@@ -13,6 +13,8 @@ export interface Message {
 	content: string;
 	type: MessageType;
 	owner: MessageOwner;
+	widget?: string;
+	reference?: string;
 }
 
 export const MessageInput = () => {
@@ -30,11 +32,11 @@ export const MessageInput = () => {
 					queryClient.getQueryData<Message[]>(['messages']) || [];
 				queryClient.setQueryData(['messages'], [...messages, data]);
 			}
-			reset();
 		},
 	});
 
 	const onSubmit = ({ message }: { message: string }) => {
+		reset();
 		const messages = queryClient.getQueryData<Message[]>(['messages']) || [];
 
 		const payload: Message = {
@@ -55,7 +57,7 @@ export const MessageInput = () => {
 	};
 
 	return (
-		<Paper sx={{ p: 3 }}>
+		<Paper sx={{ p: 2 }}>
 			<Box
 				component="form"
 				onSubmit={handleSubmit(onSubmit)}
@@ -63,12 +65,17 @@ export const MessageInput = () => {
 			>
 				<Box
 					component="input"
-					sx={{ outline: 'none', border: 'none', fontSize: 16, flexGrow: 1 }}
+					sx={{ outline: 'none', border: 'none', fontSize: 14, flexGrow: 1 }}
 					placeholder="Type your message here"
 					autoFocus
 					{...register('message')}
 				/>
-				<Button variant="contained" type="submit" endIcon={<SendIcon />}>
+				<Button
+					variant="contained"
+					type="submit"
+					endIcon={<SendIcon />}
+					sx={{ borderRadius: 36.5 / 2 }}
+				>
 					Send
 				</Button>
 			</Box>

@@ -24,15 +24,16 @@ export const ChatBubble = ({
 				<Paper
 					sx={{
 						p: 2,
-						backgroundColor: (theme) => theme.palette.primary.main,
+						backgroundColor: (theme) => theme.palette.primary.light,
 						display: 'flex',
 						gap: 1,
 						alignSelf: 'flex-start',
+						borderTopLeftRadius: 0,
 					}}
 				>
-					<LoadingDot />
-					<LoadingDot />
-					<LoadingDot />
+					<LoadingDot delay={0} />
+					<LoadingDot delay={100} />
+					<LoadingDot delay={200} />
 				</Paper>
 				<Typography variant="caption" color="text.secondary">
 					{loadingText}
@@ -44,18 +45,21 @@ export const ChatBubble = ({
 	return (
 		<Paper
 			sx={{
-				width: 500,
+				maxWidth: 500,
 				p: 2,
 				backgroundColor: (theme) =>
-					isSystem ? theme.palette.primary.main : 'white',
+					isSystem ? theme.palette.primary.light : 'white',
 				color: (theme) =>
 					isSystem
 						? theme.palette.primary.contrastText
 						: theme.palette.text.primary,
 				alignSelf: isSystem ? 'flex-start' : 'flex-end',
+				borderTopLeftRadius: isSystem ? 0 : 12,
+				borderTopRightRadius: isSystem ? 12 : 0,
+				fontSize: 14,
 			}}
 		>
-			{message}
+			<span dangerouslySetInnerHTML={{ __html: message || '' }} />
 		</Paper>
 	);
 };

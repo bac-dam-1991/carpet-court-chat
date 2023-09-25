@@ -38,8 +38,15 @@ app.post('/messages', async (req, res) => {
 		return res.status(404).json({ error: 'Message not found' });
 	}
 
-	const { ID, Content, Type, Delay, Owner } = message;
-	const reply = { id: ID, content: Content, type: Type, owner: Owner };
+	const { ID, Content, Type, Delay, Owner, Widget, Reference } = message;
+	const reply = {
+		id: ID,
+		content: Content,
+		type: Type,
+		owner: Owner,
+		widget: Widget === 'None' ? undefined : Widget,
+		reference: Reference,
+	};
 	messageHistory.push(reply);
 
 	// Simulate a delay
