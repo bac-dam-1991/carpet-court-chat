@@ -125,6 +125,7 @@ export const RightAside = () => {
 							</Box>
 						</Fade>
 					)}
+					{/* To add more images, copy the code snippet from README.md below here. */}
 				</>
 			)}
 		</Paper>
