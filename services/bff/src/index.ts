@@ -11,14 +11,7 @@ const app = express();
 
 app.get('/messages/:id', async (req, res) => {
 	const messageId = parseInt(req.params.id as string);
-	const filePath = path.join(
-		__dirname,
-		'..',
-		'..',
-		'..',
-		'data',
-		'messages.csv'
-	);
+	const filePath = path.join(__dirname, '..', 'data', 'messages.csv');
 	const file = await fs.readFile(filePath, 'utf-8');
 	const { data } = papa.parse<MessageCSV>(file, {
 		header: true,

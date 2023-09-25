@@ -5,7 +5,7 @@
 	"main": "src/index.ts",
 	"scripts": {
 		"tsc:init": "tsc --init",
-		"dev": "ts-node-dev src/index.ts"
+		"dev": "ts-node-dev --poll src/index.ts"
 	},
 	"author": "BTD Tech Pty Ltd",
 	"license": "ISC",

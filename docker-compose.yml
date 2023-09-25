@@ -1,0 +1,40 @@
+version: '3.7'
+
+services:
+  app:
+    init: true
+    image: node:18-alpine
+    command: bin/start.sh
+    restart: always
+    networks:
+      carpet-court-chat-network:
+    volumes:
+      - ./services/app:/app
+    working_dir: /app
+    healthcheck:
+      test: ['CMD', 'nc', '-z', 'localhost', '5173']
+      interval: 2s
+      timeout: 1s
+      start_period: 60s
+      retries: 120
+
+  bff:
+    init: true
+    image: node:18-alpine
+    command: bin/start.sh
+    restart: always
+    networks:
+      carpet-court-chat-network:
+    volumes:
+      - ./services/bff:/app
+      - ./data:/app/data
+    working_dir: /app
+    healthcheck:
+      test: ['CMD', 'nc', '-z', 'localhost', '3001']
+      interval: 2s
+      timeout: 1s
+      start_period: 60s
+      retries: 120
+
+networks:
+  carpet-court-chat-network:
