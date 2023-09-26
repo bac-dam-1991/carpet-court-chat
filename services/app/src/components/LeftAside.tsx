@@ -1,17 +1,15 @@
 import { Paper, Stack, Box, Typography } from '@mui/material';
-
-const AgentIdle = '/public/mark_typing.png';
+import { AgentAvatar } from './AgentAvatar';
+import { useIsMutating } from '@tanstack/react-query';
 
 export const LeftAside = () => {
+	const isMutating = useIsMutating();
+
 	return (
 		<Paper sx={{ width: 240, flexShrink: 0, display: 'flex' }}>
 			<Stack sx={{ p: 2, mt: 'auto' }} spacing={3}>
 				<Box sx={{ width: 200 }}>
-					<Box
-						component="img"
-						src={AgentIdle}
-						sx={{ width: '100%', height: 'auto' }}
-					/>
+					<AgentAvatar isTyping={!!isMutating} />
 				</Box>
 				<Stack spacing={1}>
 					<Typography variant="h5" sx={{ fontWeight: 'bold' }}>

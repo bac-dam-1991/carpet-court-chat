@@ -6,7 +6,7 @@ export interface PostMessageArgs {
 }
 
 export const postMessage = async ({ content, id }: PostMessageArgs) => {
-	const response = await axios.post('http://localhost:3001/messages', {
+	const response = await axios.post('http://localhost:3002/messages', {
 		content,
 		id,
 	});
@@ -14,6 +14,6 @@ export const postMessage = async ({ content, id }: PostMessageArgs) => {
 };
 
 export const getMessages = async () => {
-	const response = await axios.get('http://localhost:3001/messages');
+	const response = await axios.get('http://localhost:3002/messages');
 	return response.data;
 };

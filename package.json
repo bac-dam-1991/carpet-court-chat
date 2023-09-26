@@ -1,0 +1,10 @@
+{
+	"scripts": {
+		"dev:app": "cd services/app && yarn && yarn dev",
+		"dev:bff": "cd services/bff && yarn && yarn dev",
+		"dev": "concurrently \"yarn:dev:*\""
+	},
+	"dependencies": {
+		"concurrently": "^8.2.1"
+	}
+}
