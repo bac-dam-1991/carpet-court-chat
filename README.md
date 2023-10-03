@@ -21,16 +21,24 @@ If you want to add a new image there are a few things you have to do:
 
 ```tsx
 {
-	referenceRef.current === '/public/new_image.jpg' && (
-		<Fade in timeout={400}>
-			<Box sx={{ width: 450 }}>
-				<Box
-					src={referenceRef.current}
-					component="img"
-					sx={{ width: '100%' }}
-				/>
-			</Box>
-		</Fade>
-	);
+  referenceRef.current === "/public/new_image.jpg" && (
+    <Fade in timeout={400}>
+      <Box sx={{ width: 450 }}>
+        <Box
+          src={referenceRef.current}
+          component="img"
+          sx={{ width: "100%" }}
+        />
+      </Box>
+    </Fade>
+  );
 }
 ```
+
+## Passthrough response
+
+To simulate multiple responses from the system, follow the these steps:
+
+1. In the header row, add a new header called `NextAction`
+2. For the response that precedes the next response from the system, add `passthrough` in the `NextAction` column
+   - Make sure you add an extra `,` if the `Reference` column is empty
