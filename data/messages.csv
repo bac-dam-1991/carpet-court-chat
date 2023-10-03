@@ -1,4 +1,4 @@
-ID,Content,Type,Delay,Owner,Widget,Reference
+ID,Content,Type,Delay,Owner,Widget,Reference,NextAction
 0,"I recently saw your ad on television and immediately took to the Carpet featured in the scene where the kids are playing Twister!",text,0,user,None,
 1,"Hi there, thank you for getting in touch. Was this the Carpet you were referring to?",text,2000,system,Image,/public/carpet_court_kids.png
 2,"Yes that’s the one! What is the carpet in that image? I’m dying to know!",text,0,user,None
@@ -14,4 +14,5 @@ ID,Content,Type,Delay,Owner,Widget,Reference
 12,"You have selected Tuesday 9:00 AM on 26th September",text,0,user,None
 13,"Awesome! To finalise your in-store booking, could we please get your:<ul><li>Full Name</li><li>E-mail Address</li><li>Phone Number</li></ul>",text,3000,system,None
 14,"Sure. My name is Katrina Williams, 0432165987, KatrinaW@Whirlwind.com.au",text,0,user,None
-15,"Fantastic, you’ve been booked for tomorrow 9am, we’ll send a confirmation to Katrinaw@whirlwind.com.au and your phone number.<br/><br/>Just find one of our friendly staff members when you arrive, and show them your booking confirmation.<br/><br/>Thank you for shopping with Carpet Court.<br/><br/>Jason & the team looks forward to seeing you in-store!",text,3000,system,None
+15,"Fantastic, you’ve been booked for tomorrow 9am, we’ll send a confirmation to Katrinaw@whirlwind.com.au and your phone number.<br/><br/>Just find one of our friendly staff members when you arrive, and show them your booking confirmation.<br/><br/>Thank you for shopping with Carpet Court.<br/><br/>Jason & the team looks forward to seeing you in-store!",text,3000,system,None,,passthrough
+16,"Thank you for using Carpet Court",text,600,system,None
